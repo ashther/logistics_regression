@@ -27,5 +27,6 @@ for (i in list.files('test/')) {
 
 rm(list = c('con', 'ctg', 'i', 'temp'))
 
-alpha <- 0.01
-max_cycles <- 50
+alpha <- 0.5
+max_cycles <- 20
+lambda <- 0.01
