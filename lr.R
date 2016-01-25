@@ -1,5 +1,6 @@
 require(magrittr)
 require(ROCR)
+require(dplyr)
 
 if (!exists('test_lr') | !exists('train_lr')) {
     source('dataSource.R')
@@ -17,8 +18,8 @@ gradAscent <- function(train, alpha, max_cycles, lambda) {
     label <- train[, n + 1]
     train <- train[, 1:n]
     
-    #weight <- rep(1, n)
-    weight <- rnorm(n)
+    weight <- rep(1, n)
+    #weight <- rnorm(n)
     
     for (i in 1:max_cycles) {
         h <- train %*% weight %>% 
